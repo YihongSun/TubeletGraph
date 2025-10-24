@@ -8,9 +8,9 @@ Official PyTorch implementation for the NeurIPS 2025 paper: "Tracking and Unders
 ![](assets/teaser.png)
 
 ## TODOs (By 12/2)
-- Expand on [installation](#installation) documentations
-- Expand on VOST-TAS documentations and visualizations
-- Add quick demo
+- [ ] Expand and polish code documentations
+- [ ] Expand and polish VOST-TAS documentations and visualizations
+- [ ] Add quick demo from video to all predictions
 
 
 ## Installation
@@ -26,7 +26,7 @@ pip install matplotlib opencv-python tqdm scikit-image pycocotools omegaconf
 pip install imageio
 pip install imageio[ffmpeg]
 ```
-In addition, please install SAM2 with multi-mask predictions in [thirdparty/sam2](thirdparty/sam2) according to SAM2 documentations. Finally, please install [CropFormer](https://github.com/qqlu/Entity/blob/6e7e13ac91ef508088e1b848167c01f19b00b512/Entityv2/README.md) and [FC-CLIP](https://github.com/bytedance/fc-clip/tree/2b0bbe213070d44da9182530fa2e826fef03f974) with separate environments and update the paths in [configs/default.yaml](configs/default.yaml), accordingly.
+In addition, please install [SAM2 with multi-mask predictions](https://github.com/YihongSun/sam2/tree/fb5e452074cd8bf2da3e2d9b4108e480b7f07276) in [thirdparty](thirdparty) according to official documentations. Finally, please install [CropFormer](https://github.com/qqlu/Entity/blob/6e7e13ac91ef508088e1b848167c01f19b00b512/Entityv2/README.md) and [FC-CLIP](https://github.com/bytedance/fc-clip/tree/2b0bbe213070d44da9182530fa2e826fef03f974) with separate environments and update the paths in [configs/default.yaml](configs/default.yaml), accordingly.
 
 
 ## Prediction Scripts
