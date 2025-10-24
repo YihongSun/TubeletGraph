@@ -1,0 +1,83 @@
+name: Default Config for TubeletGraph
+
+paths:
+  intermdir: ./_interm_out
+  outdir: ./_pred_out
+  visdir: ./_vis_out
+  evaldir: ./_quant_out
+
+datasets:
+  vost:
+    name: vost
+    data_dir: <ADD/YOUR/PATH>/VOST
+    image_dir: <ADD/YOUR/PATH>/VOST/JPEGImages
+    split_dir: ./splits/vost
+    anno_dir: <ADD/YOUR/PATH>/VOST/Annotations
+    processed_anno_dir: <ADD/YOUR/PATH>/VOST/Annotations_processed
+    image_format: "frame*.jpg"
+    anno_format:  "frame*.png"
+    fps: 5
+
+entity_seg:
+  cropformer:
+    project_path: <ADD/YOUR/PATH>/detectron2/projects/CropFormer
+    config_path: <ADD/YOUR/PATH>/detectron2/projects/CropFormer/configs/entityv2/entity_segmentation/cropformer_hornet_3x.yaml
+    opts: ['MODEL.WEIGHTS', '<ADD/YOUR/PATH>/detectron2/ckpts/CropFormer_hornet_3x_03823a.pth']
+    confidence_threshold: 0.5
+  sam_automask:
+    model_weights: ./_ckpts/sam2.1_hiera_large.pt
+    config: configs/sam2.1/sam2.1_hiera_l.yaml
+    kwargs:
+      points_per_side: 32
+      points_per_batch: 64
+      pred_iou_thresh: 0.75
+      stability_score_thresh: 0.95
+      stability_score_offset: 1.0
+      mask_threshold: 0.0
+
+tubelet:
+  entity_method: cropformer
+  tracker:
+    name: SAM2.1
+    module: SAM2
+    model_weights: ./_ckpts/sam2.1_hiera_large.pt
+    model_cfg: configs/sam2.1/sam2.1_hiera_l.yaml
+    multi_mask: False
+  init_entity_thrd: 0.0005   # frac of pixel threshold of an initializing entity
+  fill_entity_thrd: 0.0016   # frac of pixel threshold of a filling entity (1/25)^2
+  fill_coverage_thrd: 0.25   # add a filling entity only if it is covered by existing entities for < 0.25
+  rm_init_entity_thrd: 0.75  # remove an initializing entity if it is covered by prompt mask for > 0.75
+  collect_spacing: 30
+  prox_tracker:
+    name: SAM2.1
+    module: SAM2
+    model_weights: ./_ckpts/sam2.1_hiera_large.pt
+    model_cfg: configs/sam2.1/sam2.1_hiera_l.yaml
+    multi_mask: True
+
+sem_sim:
+  name: fcclip
+  project_path: <ADD/YOUR/PATH>/fc-clip
+  config_path: <ADD/YOUR/PATH>/fc-clip/configs/coco/panoptic-segmentation/fcclip/fcclip_convnext_large_eval_ade20k.yaml
+  opts: ['MODEL.WEIGHTS', '<ADD/YOUR/PATH>/fc-clip/checkpoints/fcclip_cocopan.pth']
+
+methods:
+  Ours:
+    name: Ours
+    module: TubeletGraph
+    tubelet_dirname: "tubelets_vost_cropformer_fcclip"
+    thrds: 
+      mm_cover: 0.3
+      clip_sim_max: 0.7
+
+vlm:
+  model_name: gpt-4.1 # gpt-4.1, Qwen/Qwen2.5-VL-7B-Instruct:hyperbolic
+  init_color_rgb: [245, 0, 150]
+  init_color_name: pink
+  query_color_rgb: [0, 245, 245]
+  query_color_name: cyan-blue
+
+eval:
+  obj_id: '0'
+  skip_first_frame: True
+  temploc_max_pad: 0 # seconds each side

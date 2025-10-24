@@ -1,0 +1,6 @@
+[submodule "thirdparty/RMem"]
+	path = thirdparty/RMem
+	url = https://github.com/Restricted-Memory/RMem.git
+[submodule "thirdparty/sam2"]
+	path = thirdparty/sam2
+	url = https://github.com/YihongSun/sam2.git
