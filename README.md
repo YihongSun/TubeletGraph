@@ -9,7 +9,7 @@ Official PyTorch implementation for the NeurIPS 2025 paper: "Tracking and Unders
 
 ## TODOs (By 12/2)
 - [ ] Expand and polish code documentations
-- [ ] Expand and polish VOST-TAS documentations and visualizations
+- [ ] Expand and polish [VOST-TAS](https://github.com/YihongSun/TubeletGraph/blob/main/assets/vost_tas.json) documentations and visualizations
 - [ ] Add quick demo from video to all predictions
 
 
