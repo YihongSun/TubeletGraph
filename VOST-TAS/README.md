@@ -11,7 +11,7 @@ VOST-TAS enables evaluation of video understanding systems on their ability to t
 Each video sequence is annotated with temporal segments corresponding to object state transformations, including action descriptions and segmentation masks for resulting objects.
 
 ## Visualization
-Explore the dataset interactively using [demo.ipynb](demo.ipynb) after downloading [VOST](https://www.vostdataset.org/) and replacing `data_dir = '<DATA>/VOST'` with your own path.
+Explore the dataset interactively using [demo.ipynb](demo.ipynb) after downloading the [VOST](https://www.vostdataset.org/) dataset and replacing `data_dir = '<DATA>/VOST'` with your own path.
 ```bash
 jupyter notebook demo.ipynb
 ```
@@ -20,7 +20,7 @@ jupyter notebook demo.ipynb
 Please refer to Appendix of the manuscript([link coming soon](https://tubelet-graph.github.io/)) for more details regarding dataset construction and evaluation metrics.
 
 ## Evaluation
-Please refer to [here]() for the instructions of evaluating state-graph in terms of temporal localization, semantic correctness, spatiotemporal recall, and over transformation recall.
+Please refer to [here](https://github.com/YihongSun/TubeletGraph/blob/main/README.md#evaluation-scripts) for the instructions of evaluating state-graph in terms of temporal localization, semantic correctness, spatiotemporal recall, and over transformation recall.
 
 
 ## Citation
