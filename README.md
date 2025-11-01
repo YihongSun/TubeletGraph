@@ -13,7 +13,7 @@ Official PyTorch implementation for the NeurIPS 2025 paper: "Tracking and Unders
 - [ ] Add quick demo from input to all predictions
 
 
-## Installation
+## ⚙️ Installation
 The code is tested with `python=3.10`, `torch==2.7.0+cu126` and `torchvision==0.22.0+cu126` on a RTX A6000 GPU.
 ```
 git clone --recurse-submodules https://github.com/YihongSun/TubeletGraph/
@@ -29,7 +29,7 @@ pip install imageio[ffmpeg]
 In addition, please install [SAM2 with multi-mask predictions](https://github.com/YihongSun/sam2/tree/fb5e452074cd8bf2da3e2d9b4108e480b7f07276) in [thirdparty](thirdparty) according to official documentations. Finally, please install [CropFormer](https://github.com/qqlu/Entity/blob/6e7e13ac91ef508088e1b848167c01f19b00b512/Entityv2/README.md) and [FC-CLIP](https://github.com/bytedance/fc-clip/tree/2b0bbe213070d44da9182530fa2e826fef03f974) with separate environments and update the paths in [configs/default.yaml](configs/default.yaml), accordingly.
 
 
-## Prediction Scripts
+## 🔮 Predictions
 Computing entities (region proposals)
 ```
 python3 TubeletGraph/entity_segmentation/cropformer.py -c <CONFIG> -d <DATASET> -s <SPLIT> --num_workers <N> --wid <I>
@@ -67,7 +67,7 @@ python3 TubeletGraph/vlm/prompt_vlm.py -c <CONFIG> -p <PRED>
 python3 TubeletGraph/vlm/prompt_vlm.py -c configs/default.yaml -p vost-val-Ours
 ```
 
-## Evaluation Scripts
+## 📊 Evaluations
 Compute tracking performances
 ```
 python3 eval/eval.py -c <CONFIG> -p <PRED>
@@ -84,6 +84,8 @@ python3 eval/compute_temploc_pr.py -c configs/default.yaml -p vost-val-Ours_gpt-
 python3 eval/compute_sem_acc.py -c configs/default.yaml -p vost-val-Ours_gpt-4.1
 ```
 
+
+## 🖼️ Visualizations
 Visualizing entity segmentations
 ```
 python3 eval/vis_entities.py -c <CONFIG> -d <DATASET> -m <MODEL> -i <INSTANCE>
