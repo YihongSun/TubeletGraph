@@ -10,22 +10,23 @@ VOST-TAS enables evaluation of video understanding systems on their ability to t
 
 Each video sequence is annotated with temporal segments corresponding to object state transformations, including action descriptions and segmentation masks for resulting objects.
 
-## Visualization
-Explore the dataset interactively using [demo.ipynb](demo.ipynb) after downloading the [VOST](https://www.vostdataset.org/) dataset and replacing `data_dir = '<DATA>/VOST'` with your own path.
+## Annotations and Visualizations
+VOST-TAS annotations are found in [vost_tas.json](vost_tas.json) and you can explore the dataset interactively using [demo.ipynb](demo.ipynb)!
+- Note: [VOST](https://www.vostdataset.org/) dataset needs to be first downloaded and `data_dir = '<DATA>/VOST'` in the notebook needs to be updated.
 ```bash
 jupyter notebook demo.ipynb
 ```
 
 ## Dataset Details
-Please refer to Appendix of the manuscript([link coming soon](https://tubelet-graph.github.io/)) for more details regarding dataset construction and evaluation metrics.
+Please refer to Appendix of the manuscript([coming soon](https://tubelet-graph.github.io/)) for more details regarding dataset construction and evaluation metrics.
+- In the meantime, please reach out and I will try my best to provide any relevant details!
 
 ## Evaluation
-Please refer to [here](https://github.com/YihongSun/TubeletGraph/blob/main/README.md#evaluation-scripts) for the instructions of evaluating state-graph in terms of temporal localization, semantic correctness, spatiotemporal recall, and over transformation recall.
+Please refer to [here](https://github.com/YihongSun/TubeletGraph/blob/main/README.md#evaluations) for the instructions of evaluating state-graph in terms of temporal localization, semantic correctness, spatiotemporal recall, and over transformation recall.
 
 
 ## Citation
-If you use VOST-TAS in your research, please cite:
-
+If you find VOST-TAS useful in your research, please consider citing our paper:
 ```
 @article{sun2025tracking,
   title={Tracking and Understanding Object Transformations},
