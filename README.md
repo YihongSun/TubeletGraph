@@ -26,7 +26,12 @@ pip install matplotlib opencv-python tqdm scikit-image pycocotools omegaconf
 pip install imageio
 pip install imageio[ffmpeg]
 ```
-In addition, please install [SAM2 with multi-mask predictions](https://github.com/YihongSun/sam2/tree/fb5e452074cd8bf2da3e2d9b4108e480b7f07276) in [thirdparty](thirdparty) according to official documentations. Finally, please install [CropFormer](https://github.com/qqlu/Entity/blob/6e7e13ac91ef508088e1b848167c01f19b00b512/Entityv2/README.md) and [FC-CLIP](https://github.com/bytedance/fc-clip/tree/2b0bbe213070d44da9182530fa2e826fef03f974) with separate environments and update the paths in [configs/default.yaml](configs/default.yaml), accordingly.
+In addition, please install the following:
+- Install [SAM2 with multi-mask predictions](https://github.com/YihongSun/sam2/tree/fb5e452074cd8bf2da3e2d9b4108e480b7f07276) in [thirdparty](thirdparty) according to corresponding documentations. 
+- Install [CropFormer](https://github.com/qqlu/Entity/blob/6e7e13ac91ef508088e1b848167c01f19b00b512/Entityv2/README.md) with a separate conda environments according to their documentations.
+- Install [FC-CLIP](https://github.com/bytedance/fc-clip/tree/2b0bbe213070d44da9182530fa2e826fef03f974) with a separate conda environments according to their documentations.
+
+And update the corresponding paths in [configs/default.yaml](configs/default.yaml) for CropFormer and FC-CLIP, accordingly.
 
 
 ## 🔮 Predictions
