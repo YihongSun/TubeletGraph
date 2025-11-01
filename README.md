@@ -111,3 +111,15 @@ python3 eval/vis_tubelets.py -c <CONFIG> -p <PRED>
 ## example
 python3 eval/vis_states.py -c configs/default.yaml -p vost-val-Ours_gpt-4.1
 ```
+
+## Citation
+If you find our work useful in your research, please consider citing our paper:
+```
+@article{sun2025tracking,
+  title={Tracking and Understanding Object Transformations},
+  author={Sun, Yihong and Yang, Xinyu and Sun, Jennifer J and Hariharan, Bharath},
+  journal={Advances in Neural Information Processing Systems},
+  volume={38},
+  year={2025}
+}
+```
