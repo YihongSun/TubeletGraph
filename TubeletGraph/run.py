@@ -45,6 +45,7 @@ def main():
     parser.add_argument("-s", "--split", required=True, help="Dataset split")
     parser.add_argument("-m", "--method", default="Ours", help="Method name for predictions")
     parser.add_argument("--gpus", type=int, nargs='+', default=[0], help="List of GPU IDs to use (e.g., --gpus 0 1 2 3)")
+    parser.add_argument("--skip_vlm", action="store_true", help="Skip VLM step")
     
     args = parser.parse_args()
     args.num_workers = len(args.gpus)
@@ -95,6 +96,10 @@ def main():
         "-m", args.method
     ]
     run_command(cmd, "Computing predictions")
+
+    if args.skip_vlm:
+        print("Skipping VLM step as per user request.")
+        return
 
     # Step 5: Obtain state graph description (single worker only)
     pred_name = f"{args.dataset}-{args.split}-{args.method}"

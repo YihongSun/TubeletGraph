@@ -1,4 +1,4 @@
-import json, cv2, os, sys
+import json, cv2, os, sys, glob
 import os.path as osp
 import numpy as np
 from tqdm import tqdm
@@ -183,8 +183,7 @@ if __name__ == "__main__":
         with open(osp.join(pred_track_dir, instance_name + '.json'), 'r') as f:
             pred_data = json.load(f)
         video_name = strip_instance_name(instance_name)
-        frame_names = sorted(os.listdir(osp.join(data_cfg.image_dir, video_name)))
-        frame_paths = [osp.join(data_cfg.image_dir, video_name, f) for f in frame_names]
+        frame_paths = sorted(glob.glob(osp.join(data_cfg.image_dir, video_name, data_cfg.image_format)))
 
         track_starts, prompt_obj_idx = get_added_track_starts(pred_data)
         
