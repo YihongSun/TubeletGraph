@@ -87,13 +87,12 @@ python3 eval/eval_state_graph.py -c configs/default.yaml -p vost-val-Ours_gpt-4.
 ```
 | Data-Split-Method | $J$ | $J^S$ | $J^M$ | $J^L$ | $P$ | $R$ | $J_{tr}$ | $J_{tr}^S$ | $J_{tr}^M$ | $J_{tr}^L$ | $P_{tr}$ | $R_{tr}$ |
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-|vost-val-Ours(†)| 50.9 | 41.3 | 53.0 | 68.6 | 68.1 | 63.7 | 36.7 | 23.6 | 40.2 | 60.1 | 55.2 | 47.0 |
+|vost-val-Ours| 50.9 | 41.3 | 53.0 | 68.6 | 68.1 | 63.7 | 36.7 | 23.6 | 40.2 | 60.1 | 55.2 | 47.0 |
 
 | Data-Split-Method_VLM | Sem-Acc Verb $S_V$ | Sem-Acc Obj $S_O$ | Temp-Loc Pre $T_P$ | Temp-Loc Rec $T_R$ | Overall-Rec(ST) $H_{ST}$ | Overall-Rec $H$ |
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 |vost-val-Ours_gpt-4.1| 81.8 (*) | 72.3 (*) | 43.1 | 20.4 | 12.0 | 6.5 (*) |
 
-(†) We observe very minor differences compared to the results in the paper when CropFormer and FC-CLIP are integrated into the same pytorch environment as SAM2.  
 (*) Minor variance may be observed across runs due to non-deterministic LLM behavior in metric computation.
 
 
@@ -130,9 +129,7 @@ python3 eval/eval_tracking.py -c configs/default.yaml -p m3vos-val-Ours
 ```
 | Data-Split-Method | $J$ | $J^S$ | $J^M$ | $J^L$ | $P$ | $R$ | $J_{tr}$ | $J_{tr}^S$ | $J_{tr}^M$ | $J_{tr}^L$ | $P_{tr}$ | $R_{tr}$ |
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-|m3vos-val-Ours(†)| 74.1 | 67.4 | 78.7 | 78.2 | 88.4 | 79.8 | 64.1 | 55.9 | 68.5 | 70.3 | 82.4 | 71.5|
-
-(†) We observe very minor differences compared to the results in the paper when CropFormer and FC-CLIP are integrated into the same pytorch environment as SAM2. 
+|m3vos-val-Ours| 74.1 | 67.4 | 78.7 | 78.2 | 88.4 | 79.8 | 64.1 | 55.9 | 68.5 | 70.3 | 82.4 | 71.5|
 
 ### Custom Dataset
 
